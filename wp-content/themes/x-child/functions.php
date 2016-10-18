@@ -27,7 +27,19 @@ $nav_func_child = get_stylesheet_directory() . '/framework/functions/global';
 // =============================================================================
 
 include_once( $nav_func_child . '/navbar.php' );
+include_once( $nav_func_child . '/featured.php' );
+include_once( $nav_func_child . '/content.php' );
 
 // Additional Functions
 // =============================================================================
 
+//custom Thumbnail
+
+// add_theme_support( 'post-thumbnails' );
+
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+    // additional image sizes
+    // delete the next line if you do not need additional image sizes
+    add_image_size( 'custom-image-size', 400, 275, array( 'center', 'center' ) );
+}
